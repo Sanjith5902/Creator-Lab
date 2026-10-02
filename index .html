@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creator Lab | We grow your channel for you</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">C</span>Creator Lab</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#process">How we work</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#charity">Charity</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#join">Join Creator Lab</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Your brand, <span class="squiggle">seen</span> everywhere.</h1>
+      <p class="hero-sub">Strategy, design and technology under one roof. We plan, write, edit and publish your content so you can focus on being the creator.</p>
+      <form class="signup" onsubmit="event.preventDefault();this.querySelector('button').textContent='Joined!'">
+        <label for="email1" class="sr-only">Email address</label>
+        <input id="email1" type="email" placeholder="Enter your email" required>
+        <button class="btn" type="submit">Join</button>
+      </form>
+    </div>
+    <div class="wrap sticker-anchor">
+      <div class="stickers" aria-hidden="true">
+        <span class="sticker">Reels</span><span class="sticker">Videos</span><span class="sticker">Podcasts</span><span class="sticker">Newsletters</span><span class="sticker">Blogs</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="partners">
+    <div class="wrap split">
+      <div>
+        <h2>Partners we build with</h2>
+        <p class="lead">We work with startups and global brands alike. Every partnership rests on trust, respect and a shared idea of success.</p>
+      </div>
+      <div class="partner-list">
+        <article class="partner">
+          <p class="since">Partner since 2008</p>
+          <h3>Brand liaison</h3>
+          <p>Connects the agency with brands, gathers customer feedback and keeps the conversation about the product going.</p>
+        </article>
+        <article class="partner">
+          <p class="since">Partner since 2009</p>
+          <h3>Creative workspace</h3>
+          <p>Gives unlimited access to boards, communication and collaboration tools for a true creative partnership.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="problem">
+    <div class="wrap">
+      <h2 id="problem">Growing on any platform is harder than it looks</h2>
+      <div class="band-grid">
+        <p><strong>Too many skills</strong>Writing, editing, thumbnails, analytics. Each platform wants all of them.</p>
+        <p><strong>Too many freelancers</strong>Managing a team of part-timers takes more hours than making the content.</p>
+        <p><strong>Too little time</strong>We handle the whole pipeline so you can keep creating.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process" id="process">
+    <div class="wrap">
+      <h2>We do it for you, from first idea to final post</h2>
+      <p class="lead">Work with expert strategists, writers, editors and producers who turn your ideas into content that grows.</p>
+      <ol class="steps">
+        <li class="step"><div><h3>Research and analysis</h3><p>We study your industry, competitors and audience, then build a strategy around what we find. That depth lets us make campaigns that actually connect.</p></div></li>
+        <li class="step"><div><h3>Concept development</h3><p>Our creative team turns the brief and research into campaign ideas. We present them to you, then refine together with your feedback.</p></div></li>
+        <li class="step"><div><h3>Design and execution</h3><p>Approved concepts become finished content: designed, produced, scheduled and published across your platforms.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section proof" id="reviews">
+    <div class="wrap">
+      <h2>We've taught over 3,000 creators to grow. Now we can do it for you.</h2>
+      <div class="quotes">
+        <figure class="quote">
+          <p>Their ideas, strategy and results left a lasting impression on me as a blogger. They stand out in the creative industry.</p>
+          <footer><span class="avatar">J</span>John Li, blogger</footer>
+        </figure>
+        <figure class="quote">
+          <p>No more guessing what to post. Creator Lab gave my channel a clear plan, and the numbers followed.</p>
+          <footer><span class="avatar">A</span>Amanda Steen, vlogger</footer>
+        </figure>
+        <figure class="quote">
+          <p>Working with them felt like adding a full studio to my one-person team. I'd recommend them to any creator.</p>
+          <footer><span class="avatar">S</span>Steve, podcaster</footer>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="charity">
+    <div class="wrap">
+      <div class="charity-box">
+        <div class="charity-art" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="charity-copy">
+          <h2>Creativity with a cause</h2>
+          <p>We support charities around the world with branding, marketing and social media, helping local communities and raising awareness for important causes.</p>
+          <p>We've taken part in events for children's education, health and disaster relief, and we keep looking for new ways to help.</p>
+          <div class="tags"><span>Education</span><span>Health</span><span>Disaster relief</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta" id="join">
+    <div class="wrap">
+      <h2>Write to us any time</h2>
+      <p class="lead">Leave your email and you'll get an instant reply.</p>
+      <form class="signup" onsubmit="event.preventDefault();this.querySelector('button').textContent='Sent!'">
+        <label for="email2" class="sr-only">Email address</label>
+        <input id="email2" type="email" placeholder="Enter your email" required>
+        <button class="btn" type="submit">Join</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <p>&copy; 2026 Creator Lab</p>
+    <ul>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#process">How we work</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#charity">Charity</a></li>
+    </ul>
+    <div class="social">
+      <a href="#" aria-label="Facebook">f</a>
+      <a href="#" aria-label="Instagram">ig</a>
+      <a href="#" aria-label="LinkedIn">in</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

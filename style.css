@@ -1,0 +1,759 @@
+
+:root {
+    --blush: #fff3fd;
+    --paper: #ffffff;
+    --plum: #2b0f36;
+    --plum-2: #4a2358;
+    --orchid: #ff7ee9;
+    --orchid-deep: #d94bc2;
+    --sun: #ffd84d;
+    --mint: #9ff0d0;
+    --muted: #6b5575;
+    --radius-lg: 36px;
+    --radius-md: 20px;
+    --display: "Bricolage Grotesque",system-ui,sans-serif;
+    --body: "DM Sans",system-ui,sans-serif;
+}
+
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--blush);
+    color: var(--plum);
+    font: 400 1.0625rem/1.65 var(--body);
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+:focus-visible {
+    outline: 3px solid var(--plum);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+.wrap {
+    width: min(1120px,100% - 40px);
+    margin-inline: auto;
+}
+
+h1,h2,h3 {
+    font-family: var(--display);
+    line-height: 1.05;
+    letter-spacing: -.02em;
+    margin: 0;
+}
+
+h2 {
+    font-size: clamp(2rem,4.6vw,3.4rem);
+    font-weight: 800;
+}
+
+p {
+    margin: 0;
+}
+
+/* ==========================================
+   1. HEADER / NAVIGATION
+   The sticky bar at the top with logo, links and button.
+   ========================================== */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255,243,253,.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(43,15,54,.08);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font: 800 1.35rem var(--display);
+    text-decoration: none;
+}
+
+.brand-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 50% 50% 50% 8px;
+    background: var(--orchid);
+    border: 2px solid var(--plum);
+    display: grid;
+    place-items: center;
+    font-size: .9rem;
+}
+
+.nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav ul a {
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 2px;
+    background: linear-gradient(var(--orchid),var(--orchid)) 0 100%/0 3px no-repeat;
+    transition: background-size .25s;
+}
+
+.nav ul a:hover {
+    background-size: 100% 3px;
+}
+
+.btn {
+    display: inline-block;
+    font: 700 1rem var(--body);
+    text-decoration: none;
+    border: 2px solid var(--plum);
+    border-radius: 999px;
+    padding: 12px 24px;
+    background: var(--orchid);
+    color: var(--plum);
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--plum);
+    transition: transform .15s,box-shadow .15s;
+}
+
+.btn:hover {
+    transform: translate(2px,2px);
+    box-shadow: 2px 2px 0 var(--plum);
+}
+
+.btn:active {
+    transform: translate(4px,4px);
+    box-shadow: 0 0 0 var(--plum);
+}
+
+/* ==========================================
+   2. HERO
+   The big first section with headline and email box.
+   ========================================== */
+.hero {
+    padding: clamp(56px,9vw,120px) 0 clamp(48px,7vw,90px);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: clamp(2.6rem,8.2vw,6.4rem);
+    font-weight: 800;
+    max-width: 11ch;
+}
+
+.hero h1 .squiggle {
+    display: inline-block;
+    padding: 0 .18em;
+    margin: 0 -.05em;
+    background: var(--sun);
+    border-radius: .2em;
+    transform: rotate(-2deg);
+    box-shadow: 5px 5px 0 var(--plum);
+    border: 2px solid var(--plum);
+}
+
+.hero-sub {
+    max-width: 46ch;
+    margin: 28px 0 34px;
+    font-size: 1.2rem;
+    color: var(--plum-2);
+}
+
+.signup {
+    display: flex;
+    gap: 8px;
+    max-width: 500px;
+    background: var(--paper);
+    border: 2px solid var(--plum);
+    border-radius: 999px;
+    padding: 6px;
+    box-shadow: 5px 5px 0 var(--plum);
+}
+
+.signup input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    padding: 0 18px;
+    color: var(--plum);
+}
+
+.signup input:focus {
+    outline: none;
+}
+
+.signup:focus-within {
+    box-shadow: 5px 5px 0 var(--orchid-deep);
+}
+
+.signup .btn {
+    box-shadow: none;
+    border-width: 0;
+    padding: 12px 26px;
+}
+
+.signup .btn:hover {
+    transform: none;
+    background: var(--sun);
+}
+
+.stickers {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(430px,38%);
+    display: none;
+}
+
+.sticker {
+    position: absolute;
+    padding: 14px 22px;
+    border: 2px solid var(--plum);
+    border-radius: 999px;
+    font: 800 1.15rem var(--display);
+    box-shadow: 5px 5px 0 var(--plum);
+}
+
+.sticker:nth-child(1) {
+    background: var(--orchid);
+    top: -150px;
+    left: 30px;
+    transform: rotate(-8deg);
+}
+
+.sticker:nth-child(2) {
+    background: var(--mint);
+    top: -60px;
+    left: 150px;
+    transform: rotate(5deg);
+}
+
+.sticker:nth-child(3) {
+    background: var(--sun);
+    top: 30px;
+    left: 10px;
+    transform: rotate(-3deg);
+}
+
+.sticker:nth-child(4) {
+    background: var(--paper);
+    top: 120px;
+    left: 130px;
+    transform: rotate(7deg);
+}
+
+.sticker:nth-child(5) {
+    background: var(--plum);
+    color: var(--blush);
+    top: 210px;
+    left: 20px;
+    transform: rotate(-6deg);
+}
+
+@media(min-width:960px) {
+    .stickers {
+        display: block;
+    }
+}
+
+@media(prefers-reduced-motion:no-preference) {
+    .sticker {
+        animation: pop .6s cubic-bezier(.3,1.5,.5,1) backwards;
+    }
+    .sticker:nth-child(2) {
+        animation-delay: .12s;
+    }
+    .sticker:nth-child(3) {
+        animation-delay: .24s;
+    }
+    .sticker:nth-child(4) {
+        animation-delay: .36s;
+    }
+    .sticker:nth-child(5) {
+        animation-delay: .48s;
+    }
+}
+
+@keyframes pop {
+    from {
+        opacity: 0;
+        scale: .4;
+    }
+}
+
+/* ==========================================
+   3. PARTNERS
+   Shared section spacing, two-column layout and partner cards.
+   ========================================== */
+.section {
+    padding: clamp(56px,8vw,110px) 0;
+}
+
+.split {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr;
+}
+
+@media(min-width:900px) {
+    .split {
+        grid-template-columns: 5fr 7fr;
+        align-items: start;
+    }
+}
+
+.lead {
+    color: var(--muted);
+    font-size: 1.15rem;
+    margin-top: 20px;
+    max-width: 42ch;
+}
+
+.partner-list {
+    display: grid;
+    gap: 20px;
+}
+
+@media(min-width:600px) {
+    .partner-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.partner {
+    background: var(--paper);
+    border: 2px solid var(--plum);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    box-shadow: 6px 6px 0 var(--plum);
+}
+
+.partner:nth-child(2) {
+    background: var(--orchid);
+    margin-top: 0;
+}
+
+@media(min-width:600px) {
+    .partner:nth-child(2) {
+        margin-top: 36px;
+    }
+}
+
+.partner h3 {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+}
+
+.since {
+    font-weight: 700;
+    font-size: .95rem;
+    margin-bottom: 14px;
+    opacity: .75;
+}
+
+/* ==========================================
+   4. PROBLEM BAND
+   Dark purple section explaining the problem.
+   ========================================== */
+.band {
+    background: var(--plum);
+    color: var(--blush);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: clamp(60px,9vw,120px) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.band h2 {
+    max-width: 18ch;
+}
+
+.band-grid {
+    display: grid;
+    gap: 36px;
+    margin-top: 48px;
+}
+
+@media(min-width:800px) {
+    .band-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.band-grid p {
+    color: #e6cbee;
+    border-top: 2px solid var(--orchid);
+    padding-top: 18px;
+}
+
+.band-grid strong {
+    display: block;
+    font: 800 1.4rem var(--display);
+    color: var(--blush);
+    margin-bottom: 8px;
+}
+
+/* ==========================================
+   5. PROCESS STEPS
+   The three numbered steps.
+   ========================================== */
+.process {
+    background: var(--blush);
+}
+
+.steps {
+    list-style: none;
+    margin: 56px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 28px;
+    counter-reset: step;
+}
+
+.step {
+    display: grid;
+    gap: 22px;
+    background: var(--paper);
+    border: 2px solid var(--plum);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    counter-increment: step;
+    position: relative;
+}
+
+.step::before {
+    content: counter(step);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--sun);
+    border: 2px solid var(--plum);
+    display: grid;
+    place-items: center;
+    font: 800 1.5rem var(--display);
+}
+
+.step:nth-child(2)::before {
+    background: var(--orchid);
+}
+
+.step:nth-child(3)::before {
+    background: var(--mint);
+}
+
+.step h3 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: var(--muted);
+    max-width: 56ch;
+}
+
+@media(min-width:800px) {
+    .step {
+        grid-template-columns: 56px 1fr;
+        gap: 32px;
+        align-items: start;
+        padding: 36px 44px;
+    }
+    .step:nth-child(even) {
+        margin-left: 60px;
+    }
+    .step:nth-child(odd) {
+        margin-right: 60px;
+    }
+}
+
+/* ==========================================
+   6. TESTIMONIALS
+   Colourful review cards.
+   ========================================== */
+.proof h2 {
+    max-width: 20ch;
+}
+
+.quotes {
+    display: grid;
+    gap: 22px;
+    margin-top: 48px;
+}
+
+@media(min-width:860px) {
+    .quotes {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+.quote {
+    margin: 0;
+    padding: 30px;
+    border-radius: var(--radius-md);
+    border: 2px solid var(--plum);
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 26px;
+}
+
+.quote:nth-child(1) {
+    background: var(--orchid);
+    transform: rotate(-1.2deg);
+}
+
+.quote:nth-child(2) {
+    background: var(--sun);
+    transform: rotate(.8deg);
+}
+
+.quote:nth-child(3) {
+    background: var(--mint);
+    transform: rotate(-.6deg);
+}
+
+.quote p {
+    font: 500 1.15rem/1.5 var(--display);
+}
+
+.quote footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--plum);
+    color: var(--blush);
+    display: grid;
+    place-items: center;
+    font: 800 1rem var(--display);
+}
+
+@media(max-width:859px) {
+    .quote {
+        transform: none!important;
+    }
+}
+
+/* ==========================================
+   7. CHARITY
+   Image-style block plus text.
+   ========================================== */
+.charity-box {
+    display: grid;
+    gap: 0;
+    border: 2px solid var(--plum);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 8px 8px 0 var(--plum);
+}
+
+@media(min-width:800px) {
+    .charity-box {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.charity-art {
+    background: var(--orchid);
+    min-height: 240px;
+    position: relative;
+    overflow: hidden;
+}
+
+.charity-art i {
+    position: absolute;
+    border: 2px solid var(--plum);
+    border-radius: 50%;
+}
+
+.charity-art i:nth-child(1) {
+    width: 180px;
+    height: 180px;
+    background: var(--sun);
+    left: 10%;
+    top: 14%;
+}
+
+.charity-art i:nth-child(2) {
+    width: 120px;
+    height: 120px;
+    background: var(--mint);
+    right: 14%;
+    top: 40%;
+}
+
+.charity-art i:nth-child(3) {
+    width: 90px;
+    height: 90px;
+    background: var(--paper);
+    left: 42%;
+    bottom: 8%;
+}
+
+.charity-copy {
+    background: var(--paper);
+    padding: clamp(28px,5vw,56px);
+}
+
+.charity-copy p {
+    margin-top: 18px;
+    color: var(--muted);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 26px;
+}
+
+.tags span {
+    border: 2px solid var(--plum);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-weight: 700;
+    font-size: .95rem;
+}
+
+/* ==========================================
+   8. CONTACT + FOOTER
+   Final email form and the bottom bar.
+   ========================================== */
+.cta {
+    text-align: center;
+}
+
+.cta h2 {
+    max-width: 16ch;
+    margin-inline: auto;
+}
+
+.cta .lead {
+    margin-inline: auto;
+    text-align: center;
+}
+
+.cta .signup {
+    margin: 34px auto 0;
+}
+
+.site-footer {
+    padding: 36px 0 44px;
+    border-top: 2px solid var(--plum);
+}
+
+.foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.foot ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 26px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.foot a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.foot a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: var(--orchid-deep);
+}
+
+.social {
+    display: flex;
+    gap: 10px;
+}
+
+.social a {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--plum);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font: 800 .85rem var(--display);
+    background: var(--paper);
+    transition: background .2s;
+}
+
+.social a:hover {
+    background: var(--orchid);
+    text-decoration: none;
+}
+
+@media(max-width:760px) {
+    .nav ul {
+        display: none;
+    }
+    .nav .btn {
+        padding: 10px 18px;
+    }
+    .signup {
+        flex-direction: column;
+        border-radius: var(--radius-md);
+        padding: 10px;
+    }
+    .signup input {
+        padding: 12px 14px;
+    }
+}
+
+/* ---------- Helper classes ---------- */
+/* Hides text visually but keeps it for screen readers (used on form labels). */
+.sr-only {
+    position: absolute;
+    left: -9999px;
+}
+
+/* Zero-height wrapper that lets the stickers float over the hero. */
+.sticker-anchor {
+    position: relative;
+    height: 0;
+}
