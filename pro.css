@@ -1,0 +1,33 @@
+.story-script-regular {
+        font-family: "Story Script", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    h1.story-script-regular {
+        font-size: clamp(32px, 8vw, 90px);
+    }
+
+    .img-cap {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .card-row {
+        flex-wrap: wrap;
+    }
+
+    .card-row>div {
+        min-width: 260px;
+    }
+
+    @media (max-width: 767.98px) {
+        .teach-section {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+        }
+
+        .card-row {
+            flex-direction: column;
+        }
+    }
